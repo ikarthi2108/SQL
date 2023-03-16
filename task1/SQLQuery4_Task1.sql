@@ -58,13 +58,11 @@ select * from Trainees where Trainee_ID<5
 
 --Limit the records by retrieving the 6 to 15 records
 
-select Trainee_ID from Trainees order by trainee_id Offset 5 rows fetch next 10 rows only
+select * from Trainees order by trainee_id Offset 5 rows fetch next 10 rows only
 
 --Retrieve the top 5 records with Ties
-
-select top 5 SALARY from Trainees order by SALARY 
-
-select top 5 SALARY from Trainees order by SALARY desc
+select top 5 without ties salary from trainees order by SALARY
+select top 5 with ties SALARY from Trainees order by SALARY desc
 
 --Retrieve the records in descending order based on department column.
 
