@@ -104,6 +104,8 @@ select m.id,m.name,e.eid,e.ename from Manager as m inner join Employee as e on m
 
 select * from view_table
 drop view view_table
+
+
 --2. Show the working of 'on delete cascade on update set default' for the above tables
 
 alter table Employee drop constraint [FK__Employee__mid__534D60F1]--removing the foriegn key
@@ -117,8 +119,6 @@ alter table Employee add  mid int default 101 constraint FK__Employee__mid_del_c
 
 delete from Manager where  id=101
 update Manager set  id=101 where id=104
-
-
 
 
 
