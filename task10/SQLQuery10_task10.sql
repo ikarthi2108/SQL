@@ -42,7 +42,7 @@ select EMPLOYEE_ID,First_name,last_name,SALARY from employee where SALARY >(sele
 
 --2. Write a SQL query to find out which employees have the same HIRE_DATE as the employee whose ID is 11. Return first name, last name, job ID.
 
-select first_name,last_name,job_id,HIRE_DATE from employee where HIRE_DATE in (select HIRE_DATE from employee where EMPLOYEE_ID=11 )
+select first_name,last_name,job_id from employee where HIRE_DATE in (select HIRE_DATE from employee where EMPLOYEE_ID=11 )
 
 --3. Write a SQL query to find those employees who earn more than the average salary. Return employee ID, first name, last name.
 
@@ -54,5 +54,4 @@ select FIRST_NAME,LAST_NAME,EMPLOYEE_ID,SALARY from employee where FIRST_NAME in
 
 --5. Write a SQL query to find those employees whose salary falls within the range of the smallest salary and 2500. Return all the fields.
 
-select * from employee where SALARY between (select min(salary) from employee) and  80000
-drop table Employee
+select * from employee where SALARY between (select min(salary) from employee) and  20000
