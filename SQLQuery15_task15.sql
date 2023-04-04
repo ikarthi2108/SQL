@@ -46,10 +46,11 @@ SELECT @@TRANCOUNT AS OpenTransactions
 
     --c. Savepoint - commit update and insert statements, rollback delete statement
 	begin tran
-	delete from Student where studentid=33
-	SAVE tran A
 	update Student set score=499 where studentid=11
     insert into Student values ('Ben 10000','bsc-it',487)
+
+	SAVE tran A
+	delete from Student where studentid=10
 	select * from Student
 	select @@trancount as no_of_transactoins
 	rollback tran a
